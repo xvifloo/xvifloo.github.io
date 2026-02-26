@@ -1,0 +1,96 @@
+/* =============================================
+   CARD – PRESET CARD, FEATURE CARD
+   ============================================= */
+.preset-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.preset-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-color: #7F5AF0;
+}
+
+[data-theme="dark"] .preset-card:hover {
+    box-shadow: 0 0 20px #7F5AF0;
+}
+
+.preset-card .thumbnail {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.preset-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.preset-card .category {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(127, 90, 240, 0.1);
+    color: #7F5AF0;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    align-self: flex-start;
+}
+
+.preset-card .download-count {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.preset-card .price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #7F5AF0;
+}
+
+.preset-card .btn.small {
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+/* Feature Card */
+.feature-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card .feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    filter: var(--icon-filter);
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preset Details – Xvifloo</title>
+    <link rel="stylesheet" href="../assets/css/core/base.css">
+    <link rel="stylesheet" href="../assets/css/core/layout.css">
+    <link rel="stylesheet" href="../assets/css/components/navbar.css">
+    <link rel="stylesheet" href="../assets/css/components/footer.css">
+    <link rel="stylesheet" href="../assets/css/components/button.css">
+    <link rel="stylesheet" href="../assets/css/pages/preset-detail.css">
+    <link rel="stylesheet" href="../assets/css/themes/light.css" id="theme-style">
+    <link rel="stylesheet" href="../assets/css/responsive/mobile.css">
+</head>
+<body>
+    <nav class="navbar glass-effect">...</nav> <!-- same as presets/index -->
+    <div class="mobile-menu">...</div>
+
+    <section class="preset-detail">
+        <div class="detail-container">
+            <div class="detail-image">
+                <img src="../assets/images/presets/previews/neon-pulse.jpg" alt="Neon Pulse">
+            </div>
+            <div class="detail-info">
+                <h1>Neon Pulse</h1>
+                <span class="category-badge">KLWP</span>
+                <p class="description">A vibrant neon-themed KLWP preset with dynamic animations and glowing accents.</p>
+                <div class="meta">
+                    <span class="downloads">👍 342 downloads</span>
+                    <span class="price">Free</span>
+                </div>
+                <div class="actions">
+                    <button class="btn primary download-btn">Download</button>
+                    <button class="btn secondary preview-btn">Live Preview</button>
+                </div>
+                <div class="instructions">
+                    <h3>Installation Instructions</h3>
+                    <ol>
+                        <li>Download the preset file.</li>
+                        <li>Open KLWP app on your Android.</li>
+                        <li>Import the downloaded file.</li>
+                        <li>Apply and enjoy!</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer glass-effect">...</footer>
+
+    <script src="../assets/js/core/app.js"></script>
+    <script src="../assets/js/presets/preset-detail.js"></script>
+    <!-- Language Selection Modal -->
+<div class="modal-overlay" id="langModalOverlay" style="display: none;"></div>
+<div class="modal" id="langModal" style="display: none;">
+    <div class="modal-header">
+        <h2>Choose Language / ভাষা নির্বাচন করুন</h2>
+        <button class="modal-close" id="closeLangModal">&times;</button>
+    </div>
+    <div class="modal-body">
+        <button class="lang-option" data-lang="en">
+            <span>🇬🇧 English</span>
+        </button>
+        <button class="lang-option" data-lang="bn">
+            <span>🇧🇩 বাংলা</span>
+        </button>
+    </div>
+</div>
+</body>
+</html>

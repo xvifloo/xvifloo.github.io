@@ -1,0 +1,26 @@
+/* =============================================
+   CUSTOM ORDER PAGES
+   ============================================= */
+.custom-order {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.custom-order h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.custom-order p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* Request Form */
+.request {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}

@@ -1,0 +1,57 @@
+/* =============================================
+   SVG ANIMATIONS (per icon rules)
+   ============================================= */
+
+/* ICON033-Petal.svg – infinite rotation */
+.petal-rotate {
+    animation: rotate 12s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ICON035-Petal.svg – slow rotate */
+.petal-slow {
+    animation: rotateSlow 20s linear infinite;
+}
+
+@keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ICON028-4 Corner Star.svg – parallax scroll */
+.star-parallax {
+    animation: parallax 20s infinite alternate;
+}
+
+@keyframes parallax {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(30px); }
+}
+
+/* ICON029-Leaf.svg, ICON0025-KLWP.svg, ICON005-Rainmeter.svg, ICON030-Connect Love.svg – float Y */
+.float-y {
+    animation: floatY 6s ease-in-out infinite;
+}
+
+@keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* ICON030-Connect Love.svg – special blur decorative */
+.blur-decorative {
+    opacity: 0.05;
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+/* ICON0026-Hexagon Reduce Corner.svg – glass border overlap */
+.glass-overlap {
+    position: relative;
+    filter: blur(2px);
+    opacity: 0.3;
+}

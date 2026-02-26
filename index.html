@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Xvifloo - Transform your digital experience with beautifully crafted KLWP presets and Rainmeter skins">
+    <meta name="keywords" content="KLWP, Rainmeter, Android themes, Desktop widgets, Digital presets">
+    <meta name="author" content="Xvifloo">
+    <meta name="theme-color" content="#CAFFEE">
+    
+    <title>Xvifloo - Digital Preset Platform</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logos/LOGO003-LightBG.png">
+    
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="assets/css/core/base.css">
+    <link rel="stylesheet" href="assets/css/core/layout.css">
+    <link rel="stylesheet" href="assets/css/core/typography.css">
+    <link rel="stylesheet" href="assets/css/core/utilities.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="assets/css/components/navbar.css">
+    <link rel="stylesheet" href="assets/css/components/footer.css">
+    <link rel="stylesheet" href="assets/css/components/card.css">
+    <link rel="stylesheet" href="assets/css/components/button.css">
+    <link rel="stylesheet" href="assets/css/components/modal.css">
+    
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="assets/css/pages/home.css">
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/themes/light.css">
+    <link rel="stylesheet" href="assets/css/themes/dark.css">
+    <link rel="stylesheet" href="assets/css/themes/system.css">
+    
+    <!-- Appearance CSS -->
+    <link rel="stylesheet" href="assets/css/appearance/theme-switcher.css">
+    <link rel="stylesheet" href="assets/css/appearance/glow-effects.css">
+    
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="assets/css/animations/svg-animations.css">
+    <link rel="stylesheet" href="assets/css/animations/scroll.css">
+    <link rel="stylesheet" href="assets/css/animations/transitions.css">
+    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="assets/css/responsive/mobile.css">
+    <link rel="stylesheet" href="assets/css/responsive/tablet.css">
+    <link rel="stylesheet" href="assets/css/responsive/desktop.css">
+</head>
+<body>
+    
+    <!-- ============================================= -->
+    <!-- NAVBAR -->
+    <!-- ============================================= -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            
+            <!-- Logo -->
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <img src="assets/images/logos/LOGO003-LightBG.png" alt="Xvifloo Logo" class="logo-img" id="navbar-logo">
+                </a>
+            </div>
+            
+            <!-- Navigation Links (Desktop) -->
+            <div class="navbar-links" id="navbar-links">
+                <a href="index.html" class="nav-link active" data-lang-key="nav_home">
+                    <img src="assets/images/icons/svg/ICON008-Home.svg" alt="Home" class="nav-icon">
+                    <span>Home</span>
+                </a>
+                <a href="presets/index.html" class="nav-link" data-lang-key="nav_presets">
+                    <span>Presets</span>
+                </a>
+                <a href="tools/index.html" class="nav-link" data-lang-key="nav_tools">
+                    <img src="assets/images/icons/svg/ICON038-Tools.svg" alt="Tools" class="nav-icon">
+                    <span>Tools</span>
+                </a>
+                <a href="support/contact.html" class="nav-link" data-lang-key="nav_contact">
+                    <img src="assets/images/icons/svg/ICON037-Contact.svg" alt="Contact" class="nav-icon">
+                    <span>Contact</span>
+                </a>
+            </div>
+            
+            <!-- Right Actions -->
+            <div class="navbar-actions">
+                
+                <!-- Theme Switcher -->
+                <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <img src="assets/images/icons/svg/ICON009-Sun.svg" alt="Light Mode" class="theme-icon" id="theme-icon">
+                </button>
+                
+                <!-- Language Selector -->
+                <button class="icon-btn language-toggle" id="language-toggle" aria-label="Change language">
+                    <img src="assets/images/icons/svg/ICON036-Language.svg" alt="Language" class="language-icon">
+                </button>
+                
+                <!-- Login/Profile -->
+                <a href="auth/login.html" class="btn btn-primary" id="auth-btn" data-lang-key="nav_login">
+                    Login
+                </a>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="hamburger-line line1"></span>
+                    <span class="hamburger-line line2"></span>
+                    <span class="hamburger-line line3"></span>
+                </button>
+            </div>
+            
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <!-- Animated Petal Background -->
+        <div class="petal-animation">
+            <img src="assets/images/icons/svg/ICON033-Petal.svg" alt="" class="petal-drop" id="petal-drop">
+        </div>
+        
+        <!-- Menu Content -->
+        <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-menu-link" data-lang-key="nav_home">Home</a>
+            <a href="presets/index.html" class="mobile-menu-link" data-lang-key="nav_presets">Presets</a>
+            <a href="tools/index.html" class="mobile-menu-link" data-lang-key="nav_tools">Tools</a>
+            <a href="support/contact.html" class="mobile-menu-link" data-lang-key="nav_contact">Contact</a>
+            <a href="auth/login.html" class="mobile-menu-link" data-lang-key="nav_login">Login</a>
+        </div>
+    </div>
+    
+    <!-- ============================================= -->
+    <!-- HERO SECTION -->
+    <!-- ============================================= -->
+    <section class="hero-section" id="hero">
+        
+        <!-- Background Decorative Elements -->
+        <div class="hero-bg-decorations">
+            <img src="assets/images/icons/svg/ICON028-4 Corner Star.svg" alt="" class="decoration star-decoration">
+            <img src="assets/images/icons/svg/ICON029-Leaf.svg" alt="" class="decoration leaf-decoration">
+            <img src="assets/images/icons/svg/ICON033-Petal.svg" alt="" class="decoration petal-decoration">
+            <img src="assets/images/icons/svg/ICON035-Petal.svg" alt="" class="decoration petal-decoration-2">
+        </div>
+        
+        <div class="hero-container">
+            
+            <!-- Hero Text Content -->
+            <div class="hero-content">
+                <h1 class="hero-title" data-lang-key="hero_title">
+                    <span class="title-regular">Transform Your</span>
+                    <span class="title-accent">Digital</span>
+                    <span class="title-highlight">Experience</span>
+                </h1>
+                
+                <p class="hero-description" data-lang-key="hero_description">
+                    Discover beautifully crafted KLWP presets and Rainmeter skins.
+                    Customize your phone and desktop with ease
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="hero-buttons">
+                    <a href="presets/index.html" class="btn btn-primary btn-large" data-lang-key="hero_cta_explore">
+                        <span>Explore Presets</span>
+                        <img src="assets/images/icons/svg/ICON012-Download.svg" alt="" class="btn-icon">
+                    </a>
+                    <a href="presets/categories.html" class="btn btn-secondary btn-large" data-lang-key="hero_cta_free">
+                        Free Download
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Hero Scroll Indicator -->
+            <div class="scroll-indicator">
+                <img src="assets/images/icons/svg/ICON032-Mobile.svg" alt="" class="scroll-icon">
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- ============================================= -->
+    <!-- CATEGORIES SECTION -->
+    <!-- ============================================= -->
+    <section class="categories-section">
+        <div class="container">
+            
+            <div class="categories-grid">
+                
+                <!-- KLWP Category -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="assets/images/icons/svg/ICON0025-KLWP.svg" alt="KLWP">
+                    </div>
+                    <h3 class="category-title" data-lang-key="category_klwp_title">KLWP</h3>
+                    <p class="category-description" data-lang-key="category_klwp_desc">
+                        Android Home Screen Presets
+                    </p>
+                </div>
+                
+                <!-- Rainmeter Category -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="assets/images/icons/svg/ICON005-Rainmeter.svg" alt="Rainmeter">
+                    </div>
+                    <h3 class="category-title" data-lang-key="category_rainmeter_title">Rainmeter</h3>
+                    <p class="category-description" data-lang-key="category_rainmeter_desc">
+                        Desktop Widgets
+                    </p>
+                </div>
+                
+                <!-- Custom Order Category -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="assets/images/icons/svg/ICON030-Conect Love.svg" alt="Custom Order">
+                    </div>
+                    <h3 class="category-title" data-lang-key="category_custom_title">Custom Order</h3>
+                    <p class="category-description" data-lang-key="category_custom_desc">
+                        Get a custom design made just for you
+                    </p>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- ============================================= -->
+    <!-- FEATURED PRESETS SECTION -->
+    <!-- ============================================= -->
+    <section class="featured-presets-section">
+        <div class="container">
+            
+            <div class="section-header">
+                <h2 class="section-title" data-lang-key="featured_title">Featured Presets</h2>
+                <a href="presets/index.html" class="btn btn-link" data-lang-key="featured_view_all">
+                    View All
+                    <img src="assets/images/icons/svg/ICON0027-External Link.svg" alt="" class="btn-icon-small">
+                </a>
+            </div>
+            
+            <!-- Preset Grid (Will be populated by JS) -->
+            <div class="preset-grid" id="featured-presets-grid">
+                <!-- Presets will be loaded dynamically via JavaScript -->
+                <div class="preset-loading">Loading presets...</div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- ============================================= -->
+    <!-- FOOTER -->
+    <!-- ============================================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <!-- Footer Top -->
+            <div class="footer-top">
+                
+                <!-- Footer Brand -->
+                <div class="footer-brand">
+                    <img src="assets/images/logos/LOGO003-LightBG.png" alt="Xvifloo" class="footer-logo" id="footer-logo">
+                    <p class="footer-tagline" data-lang-key="footer_tagline">
+                        Premium digital products for Android, Desktop, and Browser. KLWP skins, Rainmeter widgets & Chrome extensions.
+                    </p>
+                    
+                    <!-- Social Links -->
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Github">
+                            <img src="assets/images/icons/svg/ICON0019-Github.svg" alt="Github">
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <img src="assets/images/icons/svg/ICON011-Facebook.svg" alt="Facebook">
+                        </a>
+                        <a href="#" class="social-link" aria-label="Email">
+                            <img src="assets/images/icons/svg/ICON0022-Mail.svg" alt="Email">
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Footer Links -->
+                <div class="footer-links-group">
+                    
+                    <!-- Product Links -->
+                    <div class="footer-links-column">
+                        <h4 class="footer-column-title" data-lang-key="footer_product">Product</h4>
+                        <ul class="footer-links-list">
+                            <li><a href="presets/index.html" data-lang-key="footer_presets">Presets</a></li>
+                            <li><a href="presets/categories.html" data-lang-key="footer_free_downloads">Free Downloads</a></li>
+                            <li><a href="tools/setup-guide.html" data-lang-key="footer_pricing">Pricing</a></li>
+                            <li><a href="custom-order/index.html" data-lang-key="footer_custom_orders">Custom Orders</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Support Links -->
+                    <div class="footer-links-column">
+                        <h4 class="footer-column-title" data-lang-key="footer_support">Support</h4>
+                        <ul class="footer-links-list">
+                            <li><a href="support/contact.html" data-lang-key="footer_contact">Contact</a></li>
+                            <li><a href="tools/faq.html" data-lang-key="footer_faq">FAQ</a></li>
+                            <li><a href="tools/setup-guide.html" data-lang-key="footer_setup_guide">Setup Guide</a></li>
+                            <li><a href="support/ticket.html" data-lang-key="footer_support_ticket">Support Ticket</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Legal Links -->
+                    <div class="footer-links-column">
+                        <h4 class="footer-column-title" data-lang-key="footer_legal">Legal</h4>
+                        <ul class="footer-links-list">
+                            <li><a href="#" data-lang-key="footer_privacy">Privacy Policy</a></li>
+                            <li><a href="#" data-lang-key="footer_terms">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2026 Xvifloo. All rights reserved.
+                </p>
+                <p class="footer-credit">
+                    Made with <span class="heart">❤️</span> for creators
+                </p>
+            </div>
+            
+        </div>
+    </footer>
+    
+    <!-- ============================================= -->
+    <!-- LANGUAGE SELECTOR MODAL -->
+    <!-- ============================================= -->
+    <div class="modal language-modal" id="language-modal">
+        <div class="modal-overlay" id="language-modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" data-lang-key="language_modal_title">Select Language</h3>
+                <button class="modal-close" id="language-modal-close">
+                    <img src="assets/images/icons/svg/ICON0021-X.svg" alt="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="language-options">
+                    <button class="language-option" data-lang="en">
+                        <span class="language-name">English</span>
+                    </button>
+                    <button class="language-option" data-lang="bn">
+                        <span class="language-name">বাংলা</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ============================================= -->
+    <!-- SCRIPTS -->
+    <!-- ============================================= -->
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+    
+    <!-- Firebase Init -->
+    <script src="firebase/firebase-config.js"></script>
+    <script src="firebase/firebase-init.js"></script>
+    
+    <!-- Core JS -->
+    <script src="assets/js/core/config.js"></script>
+    <script src="assets/js/core/utils.js"></script>
+    <script src="assets/js/core/router.js"></script>
+    
+    <!-- Auth JS -->
+    <script src="assets/js/auth/guard.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="assets/js/theme/theme-core.js"></script>
+    <script src="assets/js/theme/system-theme.js"></script>
+    
+    <!-- Language JS -->
+    <script src="assets/js/language/lang-data.js"></script>
+    <script src="assets/js/language/lang-switcher.js"></script>
+    <script src="assets/js/language/font-switcher.js"></script>
+    
+    <!-- Presets JS -->
+    <script src="assets/js/presets/preset-list.js"></script>
+    
+    <!-- Main App JS -->
+    <script src="assets/js/core/app.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,17 @@
+:root, [data-theme="light"] {
+    --bg-primary: #CAFFEE;
+    --bg-secondary: #CAFFEE;
+    --card-bg: #FFFFFF;
+    --text-primary: #1E272E;
+    --text-secondary: #2C3A47;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --navbar-bg: rgba(255, 255, 255, 0.7);
+    --footer-bg: rgba(255, 255, 255, 0.7);
+    --icon-filter: none;
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+    color: var(--text-primary);
+}

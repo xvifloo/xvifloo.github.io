@@ -1,0 +1,14 @@
+/* =============================================
+   TABLET RESPONSIVE (769px - 992px)
+   ============================================= */
+@media (min-width: 769px) and (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}

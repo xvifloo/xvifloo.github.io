@@ -1,0 +1,74 @@
+/* =============================================
+   MOBILE RESPONSIVE (up to 768px)
+   ============================================= */
+@media (max-width: 768px) {
+    /* Navbar adjustments */
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .nav-center,
+    .nav-right .theme-toggle,
+    .nav-right .lang-toggle,
+    .nav-right .btn-login {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Mobile menu overlay (already in navbar.css) */
+    .mobile-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(20px);
+    }
+
+    .mobile-menu-content {
+        width: 90%;
+        max-width: 350px;
+        padding: 30px 15px;
+    }
+
+    .mobile-menu-content ul {
+        font-size: 1.3rem;
+        gap: 15px;
+    }
+
+    .mobile-menu-content .petal-animation {
+        width: 100px;
+    }
+
+    /* Hero section */
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-title .english-accent {
+        font-size: 2.5rem;
+    }
+
+    /* Features */
+    .features {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 30px 15px;
+    }
+
+    /* Preset grid */
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Footer */
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .footer-left {
+        grid-column: auto;
+    }
+}
