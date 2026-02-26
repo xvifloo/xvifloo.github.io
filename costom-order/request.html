@@ -1,4 +1,25 @@
-<section class="request">
-    <h1>Request Custom Design</h1>
-    <form>...</form>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request Custom Order - Xvifloo</title>
+    <link rel="stylesheet" href="../assets/css/core/base.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Request Custom Design</h1>
+        <form id="custom-order-form">
+            <select required>
+                <option>Select Type</option>
+                <option>KLWP</option>
+                <option>Rainmeter</option>
+                <option>Extension</option>
+            </select>
+            <textarea placeholder="Describe your requirements" required></textarea>
+            <input type="file" accept="image/*" multiple>
+            <button type="submit" class="btn">Submit Request</button>
+        </form>
+    </div>
+    <script src="../assets/js/custom-order/request.js"></script>
+</body>
+</html>

@@ -2,208 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presets – Xvifloo</title>
+    <title>Profile - Xvifloo</title>
     <link rel="stylesheet" href="../assets/css/core/base.css">
-    <link rel="stylesheet" href="../assets/css/core/layout.css">
-    <link rel="stylesheet" href="../assets/css/core/typography.css">
-    <link rel="stylesheet" href="../assets/css/components/navbar.css">
-    <link rel="stylesheet" href="../assets/css/components/footer.css">
-    <link rel="stylesheet" href="../assets/css/components/card.css">
-    <link rel="stylesheet" href="../assets/css/components/button.css">
-    <link rel="stylesheet" href="../assets/css/pages/presets.css">
-    <link rel="stylesheet" href="../assets/css/themes/light.css" id="theme-style">
-    <link rel="stylesheet" href="../assets/css/responsive/mobile.css">
-    <link rel="stylesheet" href="../assets/css/responsive/tablet.css">
-    <link rel="stylesheet" href="../assets/css/responsive/desktop.css">
+    <link rel="stylesheet" href="../assets/css/pages/profile.css">
 </head>
 <body>
-    <!-- Navbar (same as index) -->
-    <nav class="navbar glass-effect">
-        <div class="nav-left">
-            <a href="../" class="logo">
-                <img src="../assets/images/logos/LOGO003-LightBG.png" alt="Xvifloo" class="logo-light">
-                <img src="../assets/images/logos/LOGO004-DarkBG.png" alt="Xvifloo" class="logo-dark" style="display: none;">
-            </a>
-        </div>
-        <div class="nav-center">
-            <ul class="nav-links">
-                <li><a href="../"><img src="../assets/images/icons/svg/ICON008-Home.svg" class="icon" alt=""> Home</a></li>
-                <li><a href="../presets/">Presets</a></li>
-                <li><a href="../tools/"><img src="../assets/images/icons/svg/ICON038-Tools.svg" class="icon" alt=""> Tools</a></li>
-                <li><a href="../support/contact.html"><img src="../assets/images/icons/svg/ICON037-Contact.svg" class="icon" alt=""> Contact</a></li>
-            </ul>
-        </div>
-        <div class="nav-right">
-            <button class="theme-toggle" id="themeToggle">
-                <img src="../assets/images/icons/svg/ICON009-Sun.svg" class="icon sun-icon" alt="Light">
-                <img src="../assets/images/icons/svg/ICON0020-Night Moon.svg" class="icon moon-icon" alt="Dark" style="display: none;">
-            </button>
-            <button class="lang-toggle" id="langToggle">
-                <img src="../assets/images/icons/svg/ICON036-Language.svg" class="icon" alt="Language">
-            </button>
-            <a href="../auth/login.html" class="btn-login">Login</a>
-            <button class="hamburger" id="hamburger">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
+    <nav class="navbar">
+        <a href="../index.html">Home</a>
+        <a href="index.html" class="active">Profile</a>
+        <button id="logout-btn">Logout</button>
     </nav>
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-content">
-            <ul>
-                <li><a href="../">Home</a></li>
-                <li><a href="../presets/">Presets</a></li>
-                <li><a href="../tools/">Tools</a></li>
-                <li><a href="../support/contact.html">Contact</a></li>
-                <li><a href="../auth/login.html">Login</a></li>
-            </ul>
-            <img src="../assets/images/icons/svg/ICON033-Petal.svg" class="petal-animation" alt="">
-        </div>
+    <div class="container">
+        <h1>My Profile</h1>
+        <div id="profile-info"></div>
+        <a href="downloads.html">My Downloads</a>
+        <a href="settings.html">Settings</a>
     </div>
-
-    <!-- Presets Hero -->
-    <section class="presets-hero">
-        <h1>All Presets</h1>
-        <p>Browse our collection of KLWP, Rainmeter, and Browser Extensions</p>
-    </section>
-
-    <!-- Filter Bar -->
-    <div class="filter-bar">
-        <button class="filter-btn active" data-category="all">All</button>
-        <button class="filter-btn" data-category="klwp">KLWP</button>
-        <button class="filter-btn" data-category="rainmeter">Rainmeter</button>
-        <button class="filter-btn" data-category="extension">Extensions</button>
-        <select class="sort-select">
-            <option value="popular">Most Popular</option>
-            <option value="newest">Newest</option>
-            <option value="price">Price</option>
-        </select>
-    </div>
-
-    <!-- Preset Grid -->
-    <section class="preset-grid">
-        <div class="grid-container">
-            <!-- Preset Card 1 -->
-            <div class="preset-card" data-category="klwp">
-                <img src="../assets/images/presets/thumbnails/neon-pulse.jpg" alt="Neon Pulse" class="thumbnail">
-                <h4>Neon Pulse</h4>
-                <span class="category">KLWP</span>
-                <span class="download-count">👍 342</span>
-                <div class="price">Free</div>
-                <a href="detail.html?id=1" class="btn small">View Details</a>
-            </div>
-            <!-- Preset Card 2 -->
-            <div class="preset-card" data-category="klwp">
-                <img src="../assets/images/presets/thumbnails/minimal-zen.jpg" alt="Minimal Zen" class="thumbnail">
-                <h4>Minimal Zen</h4>
-                <span class="category">KLWP</span>
-                <span class="download-count">👍 518</span>
-                <div class="price">Free</div>
-                <a href="detail.html?id=2" class="btn small">View Details</a>
-            </div>
-            <!-- Preset Card 3 -->
-            <div class="preset-card" data-category="rainmeter">
-                <img src="../assets/images/presets/thumbnails/cyber-grid.jpg" alt="Cyber Grid" class="thumbnail">
-                <h4>Cyber Grid</h4>
-                <span class="category">Rainmeter</span>
-                <span class="download-count">👍 276</span>
-                <div class="price">$4.99</div>
-                <a href="detail.html?id=3" class="btn small">View Details</a>
-            </div>
-            <!-- Preset Card 4 -->
-            <div class="preset-card" data-category="rainmeter">
-                <img src="../assets/images/presets/thumbnails/aurora-dashboard.jpg" alt="Aurora Dashboard" class="thumbnail">
-                <h4>Aurora Dashboard</h4>
-                <span class="category">Rainmeter</span>
-                <span class="download-count">👍 891</span>
-                <div class="price">Free</div>
-                <a href="detail.html?id=4" class="btn small">View Details</a>
-            </div>
-            <!-- Preset Card 5 -->
-            <div class="preset-card" data-category="extension">
-                <img src="../assets/images/presets/thumbnails/tab-master.jpg" alt="Tab Master Pro" class="thumbnail">
-                <h4>Tab Master Pro</h4>
-                <span class="category">Extension</span>
-                <span class="download-count">👍 1203</span>
-                <div class="price">Free</div>
-                <a href="detail.html?id=5" class="btn small">View Details</a>
-            </div>
-            <!-- Preset Card 6 -->
-            <div class="preset-card" data-category="extension">
-                <img src="../assets/images/presets/thumbnails/color-picker.jpg" alt="Color Picker+" class="thumbnail">
-                <h4>Color Picker+</h4>
-                <span class="category">Extension</span>
-                <span class="download-count">👍 654</span>
-                <div class="price">$1.99</div>
-                <a href="detail.html?id=6" class="btn small">View Details</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer glass-effect">
-        <div class="footer-top">
-            <div class="footer-left">
-                <img src="../assets/images/logos/LOGO003-LightBG.png" alt="Xvifloo" class="logo-light">
-                <img src="../assets/images/logos/LOGO004-DarkBG.png" alt="Xvifloo" class="logo-dark" style="display: none;">
-                <p>Premium digital products for Android, Desktop, and Browser.</p>
-            </div>
-            <div class="footer-center">
-                <h4>Product</h4>
-                <ul>
-                    <li><a href="../presets/">Products</a></li>
-                    <li><a href="../presets/?filter=free">Free Downloads</a></li>
-                    <li><a href="../presets/">Pricing</a></li>
-                    <li><a href="../custom-order/">Custom Orders</a></li>
-                </ul>
-            </div>
-            <div class="footer-center">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="../support/contact.html">Contact</a></li>
-                    <li><a href="../tools/faq.html">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-center">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-right">
-                <h4>Follow Us</h4>
-                <div class="social-icons">
-                    <a href="#"><img src="../assets/images/icons/svg/ICON011-Facebook.svg" alt="Facebook"></a>
-                    <a href="#"><img src="../assets/images/icons/svg/ICON0019-Github.svg" alt="GitHub"></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Xvifloo. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="../assets/js/core/app.js"></script>
-    <script src="../assets/js/presets/preset-list.js"></script>
-    <script src="../assets/js/theme/theme-core.js"></script>
-    <script src="../assets/js/language/lang-switcher.js"></script>
-    <!-- Language Selection Modal -->
-<div class="modal-overlay" id="langModalOverlay" style="display: none;"></div>
-<div class="modal" id="langModal" style="display: none;">
-    <div class="modal-header">
-        <h2>Choose Language / ভাষা নির্বাচন করুন</h2>
-        <button class="modal-close" id="closeLangModal">&times;</button>
-    </div>
-    <div class="modal-body">
-        <button class="lang-option" data-lang="en">
-            <span>🇬🇧 English</span>
-        </button>
-        <button class="lang-option" data-lang="bn">
-            <span>🇧🇩 বাংলা</span>
-        </button>
-    </div>
-</div>
+    <script src="../assets/js/auth/guard.js"></script>
 </body>
 </html>

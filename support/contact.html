@@ -1,15 +1,21 @@
-<section class="contact">
-    <h1>Get in Touch</h1>
-    <p>Have questions or feedback? We'd love to hear from you.</p>
-    <form class="contact-form">
-        <label>Name</label>
-        <input type="text" placeholder="Your name">
-        <label>Email</label>
-        <input type="email" placeholder="your@email.com">
-        <label>Subject</label>
-        <input type="text" placeholder="What's this about?">
-        <label>Message</label>
-        <textarea placeholder="Tell us more..."></textarea>
-        <button type="submit" class="btn primary">Send Message</button>
-    </form>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Xvifloo</title>
+    <link rel="stylesheet" href="../assets/css/core/base.css">
+    <link rel="stylesheet" href="../assets/css/pages/support.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form id="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit" class="btn">Send</button>
+        </form>
+    </div>
+    <script src="../assets/js/support/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Xvifloo</title>
+    <link rel="icon" href="../assets/images/logos/LOGO003-LightBG.png">
+    <link rel="stylesheet" href="../assets/css/core/base.css">
+    <link rel="stylesheet" href="../assets/css/components/button.css">
+    <link rel="stylesheet" href="../assets/css/components/form.css">
+    <link rel="stylesheet" href="../assets/css/pages/auth.css">
+    <link rel="stylesheet" href="../assets/css/themes/light.css">
+    <link rel="stylesheet" href="../assets/css/themes/dark.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-logo">
+                <img src="../assets/images/logos/LOGO003-LightBG.png" alt="Xvifloo" id="auth-logo">
+            </div>
+            <h1 class="auth-title">Create Account</h1>
+            <p class="auth-subtitle">Join Xvifloo today</p>
+            
+            <form class="auth-form" id="signup-form">
+                <div class="form-group">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" id="name" class="form-input" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password" class="form-label">Confirm Password</label>
+                    <input type="password" id="confirm-password" class="form-input" placeholder="••••••••" required>
+                </div>
+                <div class="error-message" id="error-message" style="display: none;"></div>
+                <button type="submit" class="btn btn-primary btn-full" id="signup-btn">Sign Up</button>
+            </form>
+            
+            <div class="auth-divider"><span>OR</span></div>
+            
+            <div class="social-login">
+                <button class="btn btn-social" id="google-signup-btn">
+                    <img src="../assets/images/icons/svg/ICON007-Google.svg" alt="Google">
+                    <span>Sign up with Google</span>
+                </button>
+            </div>
+            
+            <div class="auth-switch">
+                <span>Already have an account?</span>
+                <a href="login.html" class="form-link">Login</a>
+            </div>
+            
+            <div class="auth-back">
+                <a href="../index.html" class="btn btn-link">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="../firebase/firebase-config.js"></script>
+    <script src="../firebase/firebase-init.js"></script>
+    <script src="../assets/js/theme/theme-core.js"></script>
+    <script src="../assets/js/auth/signup.js"></script>
+</body>
+</html>

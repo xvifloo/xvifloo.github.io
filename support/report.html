@@ -1,4 +1,23 @@
-<section class="report">
-    <h1>Report an Issue</h1>
-    <form>...</form>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report Issue - Xvifloo</title>
+    <link rel="stylesheet" href="../assets/css/core/base.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Report an Issue</h1>
+        <form id="report-form">
+            <select required>
+                <option>Select Issue Type</option>
+                <option>Broken Download</option>
+                <option>Copyright</option>
+                <option>Bug</option>
+            </select>
+            <textarea placeholder="Describe the issue" required></textarea>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

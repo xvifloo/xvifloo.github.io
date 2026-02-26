@@ -1,21 +1,19 @@
-<section class="appearance">
-    <h1>Customize Theme</h1>
-    <div class="theme-palette" id="customThemeForm">
-        <label for="primaryColor">Primary Color</label>
-        <input type="color" id="primaryColor" value="#CAFFEE">
-
-        <label for="secondaryColor">Secondary Color</label>
-        <input type="color" id="secondaryColor" value="#CAFFEE">
-
-        <label for="gradientType">Gradient Type</label>
-        <select id="gradientType">
-            <option value="linear">Linear</option>
-            <option value="radial">Radial</option>
-        </select>
-
-        <div id="gradientPreview" class="gradient-preview" style="height: 100px; border-radius: 8px; margin: 20px 0;"></div>
-
-        <button class="btn primary" id="saveCustomTheme">Save Custom Theme</button>
-        <button class="btn secondary" id="resetTheme">Reset to Default</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appearance - Xvifloo</title>
+    <link rel="stylesheet" href="../assets/css/core/base.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Appearance Settings</h1>
+        <div>
+            <button data-theme="light">Light</button>
+            <button data-theme="dark">Dark</button>
+            <button data-theme="system">System</button>
+        </div>
     </div>
-</section>
+    <script src="../assets/js/theme/custom-theme.js"></script>
+</body>
+</html>
