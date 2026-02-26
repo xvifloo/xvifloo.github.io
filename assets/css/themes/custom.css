@@ -1,7 +1,0 @@
-/* =============================================
-   CUSTOM THEME – dynamically set via JavaScript
-   Variables are set inline; this file ensures fallback
-   ============================================= */
-[data-theme="custom"] {
-    /* Variables will be set via style attribute or inline */
-}

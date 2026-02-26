@@ -1,0 +1,117 @@
+/* ========== কনফিগারেশন (এখান থেকে পরিবর্তন করবেন) ========== */
+:root {
+    /* ব্যাকগ্রাউন্ড কালার - আপনি চাইলে এই হেক্স কোডগুলো পরিবর্তন করতে পারেন */
+    --gradient-color-1: #b8fff0; 
+    --gradient-color-2: #c2f5f7;
+    --gradient-angle: 135deg;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* ডাইনামিক ব্যাকগ্রাউন্ড */
+    background: linear-gradient(var(--gradient-angle), var(--gradient-color-1), var(--gradient-color-2));
+    background-attachment: fixed;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ১. কন্টেইনারকে ফিক্সড করা (যাতে শেপগুলো এর ভেতর থাকে) */
+/* ১. কন্টেইনারের সাইজ তুলে দেওয়া হয়েছে যাতে এটি স্ক্রিনের ধারের সাথে লেগে থাকে */
+.shape-container {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none; /* যাতে ক্লিক করতে সমস্যা না হয় */
+}
+
+/* ২. হেক্সাগন (ডান দিকে অর্ধেক থাকবে) */
+.shape-1 {
+    right: 0; 
+    top: 2%;
+    /* transform ব্যবহার করে শেপটিকে ঠিক অর্ধেক বাইরে পাঠানো হয়েছে */
+    transform: translateX(50%); 
+}
+
+.shape-1 .custom-hexagon {
+    width: 65px; /* আপনার প্রয়োজনমতো সাইজ দিন */
+    height: auto;
+    color: #5dd0c0;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: loopRotate 16s linear infinite;
+}
+
+/* ৩. পাপড়ি (বাম দিকে অর্ধেক থাকবে) */
+.shape-2 {
+    left: 0;
+    top: 10%;
+    /* অর্ধেক বামে স্ক্রিনের বাইরে পাঠিয়ে দেওয়া হলো */
+    transform: translateX(-50%);
+}
+
+.shape-2 .custom-petal {
+    width: 180px;
+    height: auto;
+    color: #00ca9c;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: loopRotate 10s linear infinite;
+}
+
+/* ৪. পাতা (বাম দিকে নিচে অর্ধেক থাকবে) */
+.shape-3 {
+    left: 0;
+    bottom: 5%;
+    /* অর্ধেক বামে স্ক্রিনের বাইরে পাঠিয়ে দেওয়া হলো */
+    transform: translateX(20%);
+}
+
+.shape-3 .custom-leaf {
+    width: 100px;
+    height: auto;
+    color: #10b981;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: floatLeaf 6s ease-in-out infinite;
+}
+
+/* ৫. অ্যানিমেশন (আগের মতোই) */
+@keyframes loopRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes floatLeaf {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(8deg); }
+}
+/* রেকট্যাঙ্গেল কন্টেইনার (Top Center) */
+.shape-rect-top {
+    position: absolute;
+    left: 50%;
+    /* ১. স্ক্রিনের একদম উপর থেকে ২০ পিক্সেল নিচে নামিয়ে দেওয়া হলো */
+    top: 24px; 
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+}
+
+.shape-rect-top .custom-rectangle {
+    /* ২. স্ক্রিন সাইজ অনুযায়ী চওড়া হবে */
+    width: 80vw; 
+    max-width: 1000px;
+    height: 60px; 
+    background-color: #79d7c37a; 
+    
+    /* ৩. চারদিকের কোণা সমানভাবে গোল করা হয়েছে যাতে কোনো পাশ কাটা না মনে হয় */
+    border-radius: 50px; 
+    
+    /* ৪. চারপাশ দিয়ে ছায়া (Shadow) দেওয়া হয়েছে যাতে এটি ভেসে আছে মনে হয় */
+    box-shadow: -3pt 2pt 25pt #198b78;
+    
+    /* নিশ্চিত করুন কোনো বাড়তি মার্জিন নেই যা এটাকে ঠেলে দিচ্ছে */
+    margin: 0;
+}

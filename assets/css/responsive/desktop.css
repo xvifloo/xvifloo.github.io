@@ -1,9 +1,0 @@
-/* =============================================
-   DESKTOP RESPONSIVE (993px and above)
-   ============================================= */
-@media (min-width: 993px) {
-    /* Already default styles, but we can add extra spacing if needed */
-    .grid-container {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
