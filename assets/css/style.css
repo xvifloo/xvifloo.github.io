@@ -220,12 +220,13 @@ html.js-enabled {
 
 /* --- ১. সলিড রেকট্যাঙ্গেল কন্ট্রোল --- */
 /* ১. মূল কন্টেইনার যা সবসময় স্ক্রিনের মাঝখানে থাকবে */
+/* ১. মূল কন্টেইনার (স্ক্রিনের একদম কেন্দ্রে) */
 .main-center-wrapper {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 0; /* এটি শুধু একটি সেন্টার পয়েন্ট হিসেবে কাজ করবে */
+    width: 0;
     height: 0;
     z-index: -1;
     pointer-events: none;
@@ -234,42 +235,43 @@ html.js-enabled {
 /* ২. রেকট্যাঙ্গেলগুলোর কমন সেটিংস */
 .rect-unit {
     position: absolute;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
-/* ৩. সলিড শেপের পজিশন (মাঝখান থেকে বামে) */
-.solid-pos {
-    /* মাঝখান থেকে কতটুকু বামে থাকবে তা এখান থেকে কন্ট্রোল করুন */
-    margin-left: -80px; 
-    top: 0;
+/* ৩. উপরের সলিড শেপ */
+.top-shape {
+    /* (শেপের উচ্চতার অর্ধেক + ১০ পিক্সেল গ্যাপ) = উপরে পাঠানোর মান */
+    /* যেহেতু ৯০ ডিগ্রি ঘোরানো, তাই 'width' এখন উচ্চতা হিসেবে কাজ করবে */
+    /* এখানে -৩৭.৫ পিক্সেল দিলে ২০ পিক্সেল গ্যাপ তৈরি হবে */
+    margin-top: -37.5px; 
 }
 
 .solid-design {
-    width: 55px;
-    height: 220px;
+    width: 47px; /* এটি এখন উচ্চতা */
+    height: 250px; /* এটি এখন চওড়া */
     background: linear-gradient(180deg, #10b981, #3ebfb1);
     border-radius: 30px;
     box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
-    transform: rotate(90deg);
+    transform: rotate(90deg); /* ৯০ ডিগ্রি ঘোরানো */
 }
 
-/* ৪. গ্লাস শেপের পজিশন (মাঝখান থেকে ডানে) */
-.glass-pos {
-    /* মাঝখান থেকে কতটুকু ডানে থাকবে তা এখান থেকে কন্ট্রোল করুন */
-    margin-left: 80px; 
-    top: 0;
+/* ৪. নিচের গ্লাস শেপ */
+.bottom-shape {
+    /* নিচে পাঠানোর মান */
+    margin-top: 45px; 
 }
 
 .glass-design {
-    width: 45px;
-    height: 180px;
+    width: 45px; /* এটি এখন উচ্চতা */
+    height: 180px; /* এটি এখন চওড়া */
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px) saturate(150%);
     -webkit-backdrop-filter: blur(10px) saturate(150%);
     border: 2px solid rgba(121, 215, 195, 0.6);
     border-radius: 50px;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
-    transform: rotate(90deg);
+    transform: rotate(90deg); /* ৯০ ডিগ্রি ঘোরানো */
 }
 /* ============================================================
 ৬. স্ক্রল ইন্ডিকেটর ও ফুটার
