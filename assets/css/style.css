@@ -105,7 +105,7 @@ html.js-enabled {
 .shape-4 {
     position: fixed;
     right: 0;
-    top: 70%;
+    top: 55%;
     transform: translate(50%, -50%);
     z-index: -1;
 }
@@ -134,8 +134,8 @@ html.js-enabled {
 }
 
 .custom-rectangle {
-    width: 60vw;
-    max-width: 600px;
+    width: 80vw;
+    max-width: 6000px;
     height: 46px;
     background-color: var(--glass-bg);
     backdrop-filter: blur(10px) saturate(180%);
@@ -172,29 +172,105 @@ html.js-enabled {
 ৫. সেন্ট্রাল শেপ (Center Rounded Rectangle)
 ============================================================
 */
-.center-shape-container {
+/* কন্টেইনারের কমন প্রপার্টি */
+.shape-container {
     position: fixed !important; 
-    top: 50% !important; 
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important; 
-    z-index: 9999; 
+    z-index: 999; 
     pointer-events: none;
 }
 
+/* পজিশন ১: বাম দিকে (Left) */
+.pos-left {
+    top: 70% !important; 
+    left: 23% !important;
+    transform: translate(-50%, -50%) !important; 
+}
+
+/* পজিশন ২: মাঝখানে (Center) */
+.pos-center {
+    top: 70% !important; 
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important; 
+}
+
+/* পজিশন ৩: ডান দিকে (Right) - নতুন যুক্ত করা হয়েছে */
+.pos-right {
+    top: 70% !important; 
+    left: 77% !important; /* স্ক্রিনের ডান দিক থেকে ২০% ভেতরে */
+    transform: translate(-50%, -50%) !important; 
+}
+
+/* শেপের মূল ডিজাইন */
 .base-glass-shape {
-    width: 280px;  
-    height: 160px; 
-    background: rgba(216, 255, 246, 0.35);
+    width: 70px;  
+    height: 70px; 
+    background: rgb(203, 255, 243);
     backdrop-filter: blur(15px) saturate(180%);
     -webkit-backdrop-filter: blur(15px) saturate(180%);
-    border-radius: 35px; 
-    border: 1.5px solid var(--glass-border);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 25px; 
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 3px 7px 40px rgba(11, 218, 166, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    /* হালকা এনিমেশন চাইলে এটি যোগ করতে পারেন */
+    animation: simpleFloat 4s ease-in-out infinite;
 }
 
+/* --- ১. সলিড রেকট্যাঙ্গেল কন্ট্রোল --- */
+/* ১. মূল কন্টেইনার যা সবসময় স্ক্রিনের মাঝখানে থাকবে */
+.main-center-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0; /* এটি শুধু একটি সেন্টার পয়েন্ট হিসেবে কাজ করবে */
+    height: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ২. রেকট্যাঙ্গেলগুলোর কমন সেটিংস */
+.rect-unit {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+/* ৩. সলিড শেপের পজিশন (মাঝখান থেকে বামে) */
+.solid-pos {
+    /* মাঝখান থেকে কতটুকু বামে থাকবে তা এখান থেকে কন্ট্রোল করুন */
+    margin-left: -80px; 
+    top: 0;
+}
+
+.solid-design {
+    width: 55px;
+    height: 220px;
+    background: linear-gradient(180deg, #10b981, #3ebfb1);
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+    transform: rotate(90deg);
+}
+
+/* ৪. গ্লাস শেপের পজিশন (মাঝখান থেকে ডানে) */
+.glass-pos {
+    /* মাঝখান থেকে কতটুকু ডানে থাকবে তা এখান থেকে কন্ট্রোল করুন */
+    margin-left: 80px; 
+    top: 0;
+}
+
+.glass-design {
+    width: 45px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    border: 2px solid rgba(121, 215, 195, 0.6);
+    border-radius: 50px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+    transform: rotate(90deg);
+}
 /* ============================================================
 ৬. স্ক্রল ইন্ডিকেটর ও ফুটার
 ============================================================
