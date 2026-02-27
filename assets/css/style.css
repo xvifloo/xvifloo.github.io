@@ -1,8 +1,8 @@
 /* ========== কনফিগারেশন (এখান থেকে পরিবর্তন করবেন) ========== */
 :root {
     /* ব্যাকগ্রাউন্ড কালার - আপনি চাইলে এই হেক্স কোডগুলো পরিবর্তন করতে পারেন */
-    --gradient-color-1: #b8fff0; 
-    --gradient-color-2: #c2f5f7;
+    --gradient-color-1: #c2f5f7; 
+    --gradient-color-2: #b3fff0;
     --gradient-angle: 135deg;
 }
 
@@ -16,11 +16,41 @@ body {
     overflow-x: hidden;
     position: relative;
 }
+/* ১. জাভাস্ক্রিপ্ট কাজ শুরু করলে তবেই কার্সার লুকাবে, তার আগে নয় */
+html.js-enabled {
+    cursor: none;
+}
 
+/* ২. সার্কেলটির স্টাইল */
+.cursor-outline {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 99999; /* অনেক বেশি জড-ইনডেক্স যাতে উপরে থাকে */
+    transform: translate(-50%, -50%);
+    
+    /* এটি শুরুতে লুকিয়ে থাকবে, মাউস নাড়ালে দেখা যাবে */
+    opacity: 0; 
+    background-color: rgba(255, 255, 255, 0);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+
+    /* ২. মাল্টি-লেয়ার শ্যাডো (এটিই আসল সমাধান) */
+    box-shadow: 
+        0 0 15px rgba(98, 231, 158, 0.3),         /* বাইরের কালো ছায়া (হালকা ব্যাকগ্রাউন্ডে দেখার জন্য) */
+        0 0 10px rgba(121, 215, 195, 0.8),   /* আপনার থিম কালারের গ্লো */
+        inset 0 0 15px rgba(255, 255, 255, 0.4); /* ভেতরের সাদা আভা (ডার্ক ব্যাকগ্রাউন্ডে দেখার জন্য) */
+
+    /* ৩. আগের সেই ব্লার ইফেক্ট যা আপনার পছন্দ ছিল */
+    backdrop-filter: blur(4px) brightness(1.1);
+    -webkit-backdrop-filter: blur(4px) brightness(1.1);
+}
 /* ১. কন্টেইনারকে ফিক্সড করা (যাতে শেপগুলো এর ভেতর থাকে) */
 /* ১. কন্টেইনারের সাইজ তুলে দেওয়া হয়েছে যাতে এটি স্ক্রিনের ধারের সাথে লেগে থাকে */
 .shape-container {
-    position: absolute;
+    position: fixed;
     z-index: -1;
     pointer-events: none; /* যাতে ক্লিক করতে সমস্যা না হয় */
 }
@@ -28,13 +58,13 @@ body {
 /* ২. হেক্সাগন (ডান দিকে অর্ধেক থাকবে) */
 .shape-1 {
     right: 0; 
-    top: 2%;
+    top: 2.2%;
     /* transform ব্যবহার করে শেপটিকে ঠিক অর্ধেক বাইরে পাঠানো হয়েছে */
     transform: translateX(50%); 
 }
 
 .shape-1 .custom-hexagon {
-    width: 65px; /* আপনার প্রয়োজনমতো সাইজ দিন */
+    width: 54px; /* আপনার প্রয়োজনমতো সাইজ দিন */
     height: auto;
     color: #5dd0c0;
     transform-origin: center;
@@ -45,7 +75,7 @@ body {
 /* ৩. পাপড়ি (বাম দিকে অর্ধেক থাকবে) */
 .shape-2 {
     left: 0;
-    top: 10%;
+    top: 7%;
     /* অর্ধেক বামে স্ক্রিনের বাইরে পাঠিয়ে দেওয়া হলো */
     transform: translateX(-50%);
 }
@@ -88,7 +118,7 @@ body {
 }
 /* রেকট্যাঙ্গেল কন্টেইনার (Top Center) */
 .shape-rect-top {
-    position: absolute;
+    position: fixed;
     left: 50%;
     /* ১. স্ক্রিনের একদম উপর থেকে ২০ পিক্সেল নিচে নামিয়ে দেওয়া হলো */
     top: 24px; 
@@ -96,22 +126,110 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    z-index: -1;
+    z-index: 1000;
 }
 
 .shape-rect-top .custom-rectangle {
-    /* ২. স্ক্রিন সাইজ অনুযায়ী চওড়া হবে */
-    width: 80vw; 
+    width: 80vw;
     max-width: 1000px;
-    height: 60px; 
-    background-color: #79d7c37a; 
+    height: 46px;
     
-    /* ৩. চারদিকের কোণা সমানভাবে গোল করা হয়েছে যাতে কোনো পাশ কাটা না মনে হয় */
-    border-radius: 50px; 
+    /* ১. ট্রান্সপারেন্ট ব্যাকগ্রাউন্ড কালার (RGBA ব্যবহার করুন) */
+    /* এখানে '0.4' হলো অপাসিটি বা স্বচ্ছতা, এটি কমালে আরও ট্রান্সপারেন্ট হবে */
+    background-color: rgba(216, 255, 246, 0.281); 
     
-    /* ৪. চারপাশ দিয়ে ছায়া (Shadow) দেওয়া হয়েছে যাতে এটি ভেসে আছে মনে হয় */
-    box-shadow: -3pt 2pt 25pt #198b78;
+    /* ২. ব্যাকড্রপ ফিল্টার (এটাই আসল জাদু) */
+    /* পেছনের অংশকে ব্লার করার জন্য 'blur(10px)' ব্যবহার করুন */
+    /* 'saturate(180%)' পেছনের রঙগুলোকে আরও উজ্জ্বল করবে (গ্লাস ইফেক্ট) */
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%); /* সাফারির জন্য */
     
-    /* নিশ্চিত করুন কোনো বাড়তি মার্জিন নেই যা এটাকে ঠেলে দিচ্ছে */
+    border-radius: 50px;
+    
+    /* ৩. চারপাশ দিয়ে ছায়া (Shadow) */
+    box-shadow: 0 0px 15px 0 rgb(33, 189, 150);
+    
+    /* ৪. হালকা বর্ডার (Optional, গ্লাস ইফেক্ট আরও ভালো করে) */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    
     margin: 0;
+}
+/* রেকট্যাঙ্গেল কন্টেইনারকে ফ্লেক্সবক্স করা হলো যাতে আইকন মাঝখানে থাকে */
+.custom-rectangle {
+    display: flex;
+    justify-content: center; /* ডানে-বামে মাঝখানে */
+    align-items: center;     /* উপরে-নিচে মাঝখানে */
+    position: relative;
+    overflow: hidden;
+}
+
+/* আইকন বক্সের স্টাইল */
+/* আইকন বক্সের পজিশন */
+.icon-box {
+    width: 50px;  /* আইকনটি কত বড় হবে */
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* রেকট্যাঙ্গেলটি এখন ফ্লেক্সবক্স হিসেবে কাজ করবে */
+/* ১. মূল রেকট্যাঙ্গেল কন্টেইনার */
+/* ১. মূল রেকট্যাঙ্গেল */
+/* ১. মূল রেকট্যাঙ্গেল */
+.custom-rectangle {
+    width: 60vw;
+    max-width: 600px;
+    height: 6;
+    background-color: rgba(121, 215, 195, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    position: relative; /* এটি আইকনকে পজিশন করতে সাহায্য করবে */
+    
+    /* এটি নিশ্চিত করুন: কোনভাবেই যেন 'hidden' না থাকে */
+    overflow: visible !important; 
+    
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ২. আইকন বক্স */
+.icon-box {
+    position: absolute;
+    
+    /* কোণা থেকে কতটা বাইরে থাকবে তা এখান থেকে নিয়ন্ত্রণ করুন */
+    top: -10px;    /* মাইনাস মান বাড়ালে আরও উপরে উঠবে */
+    left: -14px;  /* মাইনাস মান বাড়ালে আরও ডানে (বাইরে) যাবে */
+    
+    width: 67px;   /* আইকনের সাইজ */
+    height: auto;
+    z-index: 10;   /* যেন এটি সবকিছুর উপরে থাকে */
+}
+
+/* ১. এনিমেশন তৈরি করা (এটি আইকনটিকে ৩৬০ ডিগ্রি ঘুরাবে) */
+@keyframes continuousRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ২. আপনার SVG আইকন ক্লাসে এটি যুক্ত করুন */
+.custom-petal {
+    width: 100%;
+    height: 100%;
+    color: #20b2aa;
+    display: block;
+
+    /* এনিমেশন প্রপার্টি */
+    /* continuousRotate: এনিমেশনের নাম */
+    /* 5s: একবার ঘুরতে কত সময় নেবে (কমলে গতি বাড়বে) */
+    /* linear: সমান গতিতে ঘুরবে */
+    /* infinite: সারাক্ষণ লুপে চলতে থাকবে */
+    animation: continuousRotate 10s linear infinite;
+    
+    /* আইকনটি যেন স্মুথ দেখায় */
+    filter: drop-shadow(0 0 8px rgba(121, 215, 195, 0.6));
 }
