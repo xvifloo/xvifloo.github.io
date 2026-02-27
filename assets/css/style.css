@@ -66,7 +66,7 @@ html.js-enabled {
 .shape-1 .custom-hexagon {
     width: 54px; /* আপনার প্রয়োজনমতো সাইজ দিন */
     height: auto;
-    color: #5dd0c0;
+    color: #5dd0c1;
     transform-origin: center;
     transform-box: fill-box;
     animation: loopRotate 16s linear infinite;
