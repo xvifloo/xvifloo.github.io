@@ -335,3 +335,47 @@ html.js-enabled {
     0%, 100% { opacity: 0.3; }
     50% { opacity: 1; }
 }
+/* লোগো কন্টেইনার এবং পজিশন */
+/* Logo-r size sob screen-e ek-i thakbe */
+.nav-logo {
+    width: 140px !important; /* Apni jodi size komano ba barano chan, just ekhane man-ti bodle din */
+    height: auto !important;
+    display: block !important;
+    flex-shrink: 0;
+}
+
+/* Container-er position sob somoy 20% distance-e thakbe */
+.nav-logo-wrapper {
+    display: flex;
+    align-items: center;
+    padding-left: 10%;      /* Eitai logo-ke baam paas theke 20% dure rakhe */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Logo-r rong */
+.xvi-part { fill: #0B6456; }
+.dot-part { fill: #2EE0D2; }
+.floo-part { fill: #12A48D; }
+
+.base-glass-shape {
+    display: flex;          /* আইকনকে কন্ট্রোল করার জন্য */
+    justify-content: center; /* মাঝখানে আনার জন্য */
+    align-items: center;     /* মাঝখানে আনার জন্য */
+    position: relative;      /* বাউন্ডারি ঠিক রাখার জন্য */
+    
+    /* আপনার শেপের সাইজ (উদাহরণস্বরূপ) */
+    width: 65px;
+    height: 65px;
+}
+
+.icon0025-klwp {
+    width: 40px;      /* আইকনের সাইজ */
+    height: auto;
+    fill: #2eaf93;    /* আইকনের রঙ */
+    pointer-events: none; /* যাতে আইকনে ক্লিক না লাগে */
+}
+/* শেপের স্টাইল */
