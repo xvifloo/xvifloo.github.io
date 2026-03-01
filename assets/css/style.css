@@ -185,14 +185,53 @@ html.js-enabled {
     left: 23% !important;
     transform: translate(-50%, -50%) !important; 
 }
+.klwp-android {
+    position: absolute;
+    top: 85%;
+    left: 20%;
+    color: #000000;
+font-size: 15px;
+font-weight: bold;
 
+}
+.klwp-android-details {
+    position: absolute;
+     width: 120px;
+     text-align: center;
+    top: 115%;
+    left: -38%;
+    color: #3a4e4a;
+font-size: 12px;
+
+
+}
 /* পজিশন ২: মাঝখানে (Center) */
 .pos-center {
     top: 70% !important; 
     left: 50% !important;
     transform: translate(-50%, -50%) !important; 
 }
+.rainmeter-dex {
+    position: absolute;
+    top: 85%;
+    left: 0%;
+    color: #000000;
+font-size: 15px;
+font-weight: bold;
 
+}
+.rainmeter-dex-details {
+    position: absolute;
+    top: 115%;
+    left: -34%;
+     width: 120px;
+      text-align: center;
+    color: #3a4e4a;
+font-size: 12px;
+
+
+
+}
 /* পজিশন ৩: ডান দিকে (Right) - নতুন যুক্ত করা হয়েছে */
 .pos-right {
     top: 70% !important; 
@@ -200,6 +239,28 @@ html.js-enabled {
     transform: translate(-50%, -50%) !important; 
 }
 
+.custom-ordered {
+    position: absolute;
+    top: 85%;
+    left: -22%;
+    color: #000000;
+font-size: 15px;
+font-weight: bold;
+white-space: nowrap;
+
+}
+.custom-ordered-details {
+    position: absolute;
+    top: 115%;
+    left: -34%;
+    width: 120px;
+     text-align: center;
+    color: #3a4e4a;
+font-size: 12px;
+
+
+
+}
 /* শেপের মূল ডিজাইন */
 .base-glass-shape {
     width: 70px;  
@@ -248,13 +309,22 @@ html.js-enabled {
 }
 
 .solid-design {
-    width: 47px; /* এটি এখন উচ্চতা */
-    height: 250px; /* এটি এখন চওড়া */
-    background: linear-gradient(180deg, #10b981, #3ebfb1);
+    width: 250px; /* এটি এখন উচ্চতা */
+    height: 47px; /* এটি এখন চওড়া */
+    background: #30a390;
     border-radius: 30px;
-    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
-    transform: rotate(90deg); /* ৯০ ডিগ্রি ঘোরানো */
+    box-shadow: 3px 4px 30px rgb(86, 199, 161);
+    transform: rotate(0deg); /* ৯০ ডিগ্রি ঘোরানো */
 }
+.presets-button2 { 
+    position:absolute;
+    top: 27%;
+    left: 29%;
+    color:#94f1e2;
+    font-size: 100%;
+    font-weight: bold;
+}
+
 
 /* ৪. নিচের গ্লাস শেপ */
 .bottom-shape {
@@ -263,17 +333,26 @@ html.js-enabled {
 }
 
 .glass-design {
-    width: 45px; /* এটি এখন উচ্চতা */
-    height: 180px; /* এটি এখন চওড়া */
+    width: 180px; /* এটি এখন উচ্চতা */
+    height: 45px; /* এটি এখন চওড়া */
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px) saturate(150%);
     -webkit-backdrop-filter: blur(10px) saturate(150%);
-    border: 2px solid rgba(121, 215, 195, 0.6);
     border-radius: 50px;
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
-    transform: rotate(90deg); /* ৯০ ডিগ্রি ঘোরানো */
+    box-shadow: 5px 8px 32px rgba(103, 207, 185, 0.884);
+    transform: rotate(0deg); /* ৯০ ডিগ্রি ঘোরানো */
 }
-/* ============================================================
+.presets-button1 { 
+    position:absolute;
+    top: 27%;
+    left: 32%;
+    color:#2aa586;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+/* ================================
+============================
 ৬. স্ক্রল ইন্ডিকেটর ও ফুটার
 ============================================================
 */
@@ -396,10 +475,12 @@ html.js-enabled {
 
 /* কাস্টম ফন্ট লিংক করা */
 /* … আপনার @font-face, রুট ভ্যারিয়েবল ইত্যাদি … */
-
-.no-wrap {
-    white-space: nowrap;       /* প্রথম লাইনের শব্দ ভাঙবে না */
-    display: inline-block;     /* প্রয়োজনমতো ব্লক হিসেবে আচরণ করবে */
+/* style.css */
+@font-face {
+    font-family: 'Carollo-Playscript-Medium'; 
+    src: url('../fonts/english/Carollo-Playscript-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .custom-heading {
@@ -407,14 +488,14 @@ html.js-enabled {
     top: 18% !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
-    z-index: 100 !important;
+    z-index: 2000 !important;
     margin: 0;
     padding: 0;
     text-align: center;
     width: auto;               /* কাটাছেঁড়া প্রস্থ নিন, প্রয়োজনে 90% অথবা none */
     max-width: 800px;          /* চাইলে বড় রাখুন */
-    font-family: 'CarolloFont', sans-serif;
-    font-size: 35px;
+    font-family: 'Carollo-Playscript-Medium', sans-serif;
+    font-size: 29px;
     font-weight: bold;
     line-height: 1.2;
     white-space: nowrap;
@@ -428,8 +509,21 @@ html.js-enabled {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+.subtitle {
+    position: fixed;
+    top: 27% ;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100 !important;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 75%;               /* কাটাছেঁড়া প্রস্থ নিন, প্রয়োজনে 90% অথবা none */
+    max-width: 800px;          /* চাইলে বড় রাখুন */
+    font-family: 'Comfortta', sans-serif;
+    font-size:15px ;
+    line-height: 1.2;
+    white-space: ;
+    color: #566661;
 
-/* ছোট স্ক্রিনে ফন্ট ছোট করতে মিডিয়া কুয়েরি */
-@media (max-width: 640px) {
-    .custom-heading { font-size: 34px; }
 }
