@@ -394,11 +394,42 @@ html.js-enabled {
     pointer-events:none;
 }
 
-/* টেক্সটের স্টাইল */
-.explore-presets {
-    color: #899b93;          /* টেক্সটের রঙ (সাদা) */
-    font-size: 16px;         /* টেক্সটের সাইজ */
-    font-weight: 600;        /* টেক্সটটি একটু বোল্ড দেখাবে */
-    pointer-events: none;    /* টেক্সটে ক্লিক না লাগার জন্য */
-    font-family: sans-serif; /* ফন্ট স্টাইল */
+/* কাস্টম ফন্ট লিংক করা */
+/* … আপনার @font-face, রুট ভ্যারিয়েবল ইত্যাদি … */
+
+.no-wrap {
+    white-space: nowrap;       /* প্রথম লাইনের শব্দ ভাঙবে না */
+    display: inline-block;     /* প্রয়োজনমতো ব্লক হিসেবে আচরণ করবে */
+}
+
+.custom-heading {
+    position: fixed !important;
+    top: 18% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 100 !important;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: auto;               /* কাটাছেঁড়া প্রস্থ নিন, প্রয়োজনে 90% অথবা none */
+    max-width: 800px;          /* চাইলে বড় রাখুন */
+    font-family: 'CarolloFont', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 1.2;
+    white-space: nowrap;
+    color: #000;
+}
+
+/* গ্রেডিয়েন্ট টেক্সট */
+.gradient-text {
+    background: linear-gradient(90deg,#10b981,#3ebfb1, #546fc9,#9b32c5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ছোট স্ক্রিনে ফন্ট ছোট করতে মিডিয়া কুয়েরি */
+@media (max-width: 640px) {
+    .custom-heading { font-size: 34px; }
 }
