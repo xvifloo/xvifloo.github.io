@@ -372,10 +372,33 @@ html.js-enabled {
     height: 65px;
 }
 
-.icon0025-klwp {
+.icon032-mobile {
     width: 40px;      /* আইকনের সাইজ */
     height: auto;
+    transform: translateY(-2px);
     fill: #2eaf93;    /* আইকনের রঙ */
     pointer-events: none; /* যাতে আইকনে ক্লিক না লাগে */
 }
-/* শেপের স্টাইল */
+.icon031-dex {
+    width: 40px;
+    height:auto;
+    transform: translateY(0px);
+    fill: #2eaf93;
+    pointer-events: none;
+}
+.icon030-conectLove{
+    width: 40px;
+    height:auto;
+    transform: translateY(2px);
+    fill: #2eaf93;
+    pointer-events:none;
+}
+
+/* টেক্সটের স্টাইল */
+.explore-presets {
+    color: #899b93;          /* টেক্সটের রঙ (সাদা) */
+    font-size: 16px;         /* টেক্সটের সাইজ */
+    font-weight: 600;        /* টেক্সটটি একটু বোল্ড দেখাবে */
+    pointer-events: none;    /* টেক্সটে ক্লিক না লাগার জন্য */
+    font-family: sans-serif; /* ফন্ট স্টাইল */
+}
