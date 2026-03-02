@@ -187,15 +187,17 @@ html.js-enabled {
 }
 .klwp-android {
     position: absolute;
+    font-family: 'bargain', sans-serif;
     top: 85%;
     left: 20%;
     color: #000000;
 font-size: 15px;
-font-weight: bold;
+
 
 }
 .klwp-android-details {
     position: absolute;
+    font-family: 'comfortaa', sans-serif;
      width: 120px;
      text-align: center;
     top: 115%;
@@ -214,14 +216,16 @@ font-size: 12px;
 .rainmeter-dex {
     position: absolute;
     top: 85%;
+    font-family: 'bargain', sans-serif;
     left: 0%;
     color: #000000;
 font-size: 15px;
-font-weight: bold;
+
 
 }
 .rainmeter-dex-details {
     position: absolute;
+    font-family: 'comfortaa', sans-serif;
     top: 115%;
     left: -34%;
      width: 120px;
@@ -241,18 +245,20 @@ font-size: 12px;
 
 .custom-ordered {
     position: absolute;
+    font-family: 'bargain', sans-serif;
     top: 85%;
     left: -22%;
     color: #000000;
 font-size: 15px;
-font-weight: bold;
+
 white-space: nowrap;
 
 }
 .custom-ordered-details {
     position: absolute;
+    font-family: 'comfortaa', sans-serif;
     top: 115%;
-    left: -34%;
+    left: -40%;
     width: 120px;
      text-align: center;
     color: #3a4e4a;
@@ -322,7 +328,7 @@ font-size: 12px;
     left: 29%;
     color:#94f1e2;
     font-size: 100%;
-    font-weight: bold;
+   font-family: 'bargain', sans-serif;
 }
 
 
@@ -348,7 +354,8 @@ font-size: 12px;
     left: 32%;
     color:#2aa586;
     font-size: 100%;
-    font-weight: bold;
+    font-family: 'bargain', sans-serif;
+    font-weight: ;
 }
 
 /* ================================
@@ -477,12 +484,35 @@ font-size: 12px;
 /* … আপনার @font-face, রুট ভ্যারিয়েবল ইত্যাদি … */
 /* style.css */
 @font-face {
-    font-family: 'Carollo-Playscript-Medium'; 
-    src: url('../fonts/english/Carollo-Playscript-Medium.otf') format('opentype');
+    font-family: 'carrallo-playscript'; 
+    src: url('../fonts/english/carrollo-playscript.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'agilera'; 
+    src: url('../fonts/english/agilera.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bargaim'; 
+    src: url('../fonts/english/bargain.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'comfortaa'; 
+    src: url('../fonts/english/comfortaa.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'shonoy'; 
+    src: url('../fonts/english/shanoy.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 .custom-heading {
     position: fixed !important;
     top: 18% !important;
@@ -494,8 +524,8 @@ font-size: 12px;
     text-align: center;
     width: auto;               /* কাটাছেঁড়া প্রস্থ নিন, প্রয়োজনে 90% অথবা none */
     max-width: 800px;          /* চাইলে বড় রাখুন */
-    font-family: 'Carollo-Playscript-Medium', sans-serif;
-    font-size: 29px;
+    font-family: 'agilera' , sans-serif;
+    font-size: 36px;
     font-weight: bold;
     line-height: 1.2;
     white-space: nowrap;
@@ -511,6 +541,7 @@ font-size: 12px;
 }
 .subtitle {
     position: fixed;
+    font-family: 'comfortaa', sans-serif;
     top: 27% ;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -518,12 +549,5 @@ font-size: 12px;
     margin: 0;
     padding: 0;
     text-align: center;
-    width: 75%;               /* কাটাছেঁড়া প্রস্থ নিন, প্রয়োজনে 90% অথবা none */
-    max-width: 800px;          /* চাইলে বড় রাখুন */
-    font-family: 'Comfortta', sans-serif;
-    font-size:15px ;
-    line-height: 1.2;
-    white-space: ;
-    color: #566661;
-
+    width: 80%;
 }
