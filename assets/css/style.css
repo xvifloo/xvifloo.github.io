@@ -479,7 +479,31 @@ font-size: 12px;
     fill: #2eaf93;
     pointer-events:none;
 }
+.color-plate {
+    width: 29px;
+    position:absolute;
+    left: 75%;
+    height:auto;
+    fill: #219283;
+    pointer-events: none;
+}
+.hamburger {
+    width: 20px;  
+    position: absolute;              /* আইকনের চওড়া */
+    height: 15px;  
+    left: 90%;             /* আইকনের উচ্চতা */
+    display: flex;              /* ফ্লেক্সবক্স দিয়ে লাইনগুলো সাজাবো */
+    flex-direction: column;     /* ওপর-নিচ সাজানোর জন্য */
+    justify-content: space-between; /* লাইনগুলোর মাঝে সমান ফাঁকা রাখতে */
+    cursor: pointer;            /* মাউস নিলে হাত চিহ্ন দেখাবে */
+}
 
+.hamburger span {
+    width: 100%;                /* লাইনের লম্বা */
+    height: 3px;                /* লাইনের পুরুত্ব */
+    background-color: #359b8a;     /* লাইনের রঙ (আপনার প্রয়োজন অনুযায়ী বদলাতে পারেন) */
+    border-radius: 2px;         /* কোণা গোলাকার করার জন্য */
+}
 /* কাস্টম ফন্ট লিংক করা */
 /* … আপনার @font-face, রুট ভ্যারিয়েবল ইত্যাদি … */
 /* style.css */
