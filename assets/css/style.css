@@ -14,7 +14,7 @@
 body {
     margin: 0;
     padding: 0;
-    min-height: 150vh; /* পেজ স্ক্রলযোগ্য করার জন্য */
+    /* hero-section + footer মিলে height তৈরি হবে, তাই min-height সরানো হয়েছে */
     background: linear-gradient(var(--gradient-angle), var(--gradient-color-1), var(--gradient-color-2));
     background-attachment: fixed;
     overflow-x: hidden;
@@ -289,13 +289,14 @@ font-size: 12px;
 /* ১. মূল কন্টেইনার যা সবসময় স্ক্রিনের মাঝখানে থাকবে */
 /* ১. মূল কন্টেইনার (স্ক্রিনের একদম কেন্দ্রে) */
 .main-center-wrapper {
-    position: fixed;
+    /* position: fixed ছিল → hero-section-এর মধ্যে absolute করা হয়েছে */
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 0;
     height: 0;
-    z-index: -1;
+    z-index: 5;
     pointer-events: none;
 }
 
@@ -381,16 +382,113 @@ font-size: 12px;
 }
 
 .site-footer {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    padding: 30px 0;
-    background: rgba(216, 255, 246, 0.15); 
-    backdrop-filter: blur(15px);
-    border-top: 1px solid var(--glass-border);
+    height: auto;
+    min-height: 220px;
+    background: #263632;
+    margin: 0;
+    padding: 20px 30px 15px 30px;
+    box-sizing: border-box;
     position: relative;
-    margin-top: 50px;
-    z-index: 10;
-    text-align: center;
-    color: #1C274C;
+    z-index: 1000;
+}
+
+.footer-logo {
+    width: 130px;
+    height: auto;
+}
+
+.footer-logo .f-floo { fill: #3AB39F; }
+.footer-logo .f-xvi  { fill: #ffffff; }
+.footer-logo .f-dot  { fill: #63C6C4; }
+
+.footer-line {
+    width: 100%;
+    height: 0.5px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 15px 0;  /* ← এটা বদলান */
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    font-size: 9px;
+    font-family: 'comfortaa', sans-serif;
+}
+
+.footer-left {
+    color: #90afa3;
+}
+
+.footer-right {
+    color: #90afa3;
+}
+.footer-desc {
+    color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    font-size: 9px;
+    font-family: 'comfortaa', sans-serif;
+    margin: 8px 0 0 0;
+    padding: 0;
+}
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 12px;
+}
+
+.social-icon {
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 40px;
+}
+
+.footer-left-col {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-col-title {
+    color: #ffffff;
+    font-family: 'comfortaa', sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.footer-col a {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'comfortaa', sans-serif;
+    font-size: 9px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #3AB39F;
+}
+
+.social-icon:hover {
+    color: #3AB39F;
 }
 
 /* ============================================================
@@ -538,17 +636,18 @@ font-size: 12px;
     font-style: normal;
 }
 .custom-heading {
-    position: fixed !important;
-    top: 18% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    z-index: 2000 !important;
+    /* position: fixed ছিল → hero-section-এর মধ্যে absolute করা হয়েছে */
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
     margin: 0;
     padding: 0;
     text-align: center;
-    width: auto;               /* কাটাছেঁড়া প্রস্থ নিন, প্রয়োজনে 90% অথবা none */
-    max-width: 800px;          /* চাইলে বড় রাখুন */
-    font-family: 'agilera' , sans-serif;
+    width: auto;
+    max-width: 800px;
+    font-family: 'agilera', sans-serif;
     font-size: 36px;
     font-weight: bold;
     line-height: 1.2;
@@ -564,14 +663,34 @@ font-size: 12px;
     background-clip: text;
 }
 .subtitle {
-    position: fixed;
+    /* position: fixed ছিল → hero-section-এর মধ্যে absolute করা হয়েছে */
+    position: absolute;
     font-family: 'comfortaa', sans-serif;
-    top: 27% ;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 100 !important;
+    z-index: 2;
     margin: 0;
     padding: 0;
     text-align: center;
     width: 80%;
+}
+/* ============================================================
+   HERO SECTION — এই section scroll করে, ভেতরের content
+   absolute position-এ সাজানো (ঠিক আগের মতো দেখাবে)
+============================================================ */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: visible;
+}
+
+/* pos-left/center/right: shape-1/2/3/4 fixed থাকবে,
+   কিন্তু feature card গুলো hero-section-এ absolute হবে */
+.shape-container.pos-left,
+.shape-container.pos-center,
+.shape-container.pos-right {
+    position: absolute !important;
+    /* top/left values নিচে আলাদাভাবে আছে, সেগুলো কাজ করবে */
 }
