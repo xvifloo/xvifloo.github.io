@@ -991,3 +991,274 @@ font-size: 12px;
         flex-direction: column !important;
     }
 }
+/* ============================================================
+   STEP 3 — style.css এর একদম শেষে paste করো
+============================================================ */
+
+/* ── COLOR VARIABLES ─────────────────────────────────────── */
+:root {
+  --ps-klwp-color  : #46ffd5;          /* KLWP badge icon + text */
+  --ps-rm-color    : #7dd3fc;          /* Rainmeter badge icon + text */
+  --ps-glow        : #46ffd5;          /* hover glow রং */
+  --ps-glow2       : #0bd4a8;          /* hover glow দ্বিতীয় রং */
+  --ps-card-glass  : rgba(195,250,238,0.25);
+  --ps-card-border : rgba(255,255,255,0.62);
+  --ps-title       : #0a3d33;
+  --ps-desc        : #3a7a6e;
+  --ps-btn-bg      : rgba(185,248,232,0.35);
+  --ps-btn-border  : rgba(11,155,132,0.30);
+  --ps-btn-text    : #0b6b5a;
+  --ps-btn-icon    : #0b9b84;
+}
+
+/* ── SECTION ─────────────────────────────────────────────── */
+.presets-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.presets-section.ps-vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.presets-heading {
+  text-align: center;
+  margin-bottom: 44px;
+}
+.presets-heading h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ps-title);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.ps-accent {
+  background: linear-gradient(90deg, #0b9b84, #3dbfb1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.presets-heading p {
+  font-size: 11px;
+  color: var(--ps-desc);
+  line-height: 1.7;
+}
+
+/* ── GRID ────────────────────────────────────────────────── */
+.presets-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+@media (max-width: 860px) {
+  .presets-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+}
+@media (max-width: 440px) {
+  .presets-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+}
+
+/* ── CARD — rotating glow OUTSIDE ───────────────────────── */
+@property --ps-ga {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes ps-spin {
+  to { --ps-ga: 360deg; }
+}
+
+.preset-card {
+  position: relative;
+  border-radius: 18px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .5s ease, transform .5s ease;
+  cursor: pointer;
+}
+.preset-card.ps-vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+.preset-card:hover {
+  transform: translateY(-6px) !important;
+}
+
+/* glow ring — CARD এর বাইরে, চারপাশে ঘোরে */
+.preset-card::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 21px;
+  background: conic-gradient(
+    from var(--ps-ga),
+    transparent    0deg,
+    var(--ps-glow) 60deg,
+    var(--ps-glow2) 90deg,
+    transparent   130deg,
+    transparent   360deg
+  );
+  opacity: 0;
+  z-index: 0;
+  transition: opacity .3s ease;
+  filter: blur(1.5px);
+}
+.preset-card:hover::before {
+  opacity: 1;
+  animation: ps-spin 1.8s linear infinite;
+}
+
+/* card face mask — গ্লো ভেতরে ঢুকবে না */
+.preset-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: var(--ps-card-glass);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── CARD INNER FACE ─────────────────────────────────────── */
+.pc-inner {
+  position: relative;
+  z-index: 2;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--ps-card-glass);
+  backdrop-filter: blur(14px) saturate(145%);
+  -webkit-backdrop-filter: blur(14px) saturate(145%);
+  border: 1.5px solid var(--ps-card-border);
+  box-shadow:
+    0 5px 24px rgba(10, 155, 130, .10),
+    inset 0 1px 2px rgba(255, 255, 255, .40);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── IMAGE ───────────────────────────────────────────────── */
+.pc-img {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.klwp-img { height: 200px; }   /* KLWP  — portrait লম্বা */
+.rain-img  { height: 140px; }  /* Rainmeter — landscape চওড়া */
+
+.pc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform .45s ease;
+}
+.preset-card:hover .pc-img img {
+  transform: scale(1.06);
+}
+
+/* ── BADGE ───────────────────────────────────────────────── */
+.pc-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 9px 4px 6px;
+  border-radius: 30px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, .20);
+  z-index: 3;
+}
+.klwp-badge { background: rgba(6, 38, 31, .72); }
+.rain-badge  { background: rgba(5, 24, 42, .76); }
+
+.pc-badge svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+.klwp-badge svg { color: var(--ps-klwp-color); }
+.rain-badge  svg { color: var(--ps-rm-color);   }
+
+.pc-badge span {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+.klwp-badge span { color: #b8fff2; }
+.rain-badge  span { color: #bde8ff; }
+
+/* ── INFO AREA ───────────────────────────────────────────── */
+.pc-info {
+  padding: 12px 13px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.pc-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ps-title);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pc-desc {
+  font-size: 9px;
+  color: var(--ps-desc);
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+/* ── VIEW DETAILS BUTTON ─────────────────────────────────── */
+.pc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px 6px 10px;
+  border-radius: 30px;
+  background: var(--ps-btn-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--ps-btn-border);
+  cursor: pointer;
+  text-decoration: none;
+  width: fit-content;
+  margin-top: auto;
+  transition:
+    background .25s,
+    border-color .25s,
+    transform .2s,
+    box-shadow .25s;
+}
+.pc-btn:hover {
+  background: rgba(11, 155, 132, .20);
+  border-color: rgba(70, 255, 213, .58);
+  box-shadow: 0 0 14px rgba(70, 255, 213, .22);
+  transform: translateY(-1px);
+}
+.pc-btn svg {
+  width: 12px;
+  height: 12px;
+  color: var(--ps-btn-icon);
+}
+.pc-btn span {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--ps-btn-text);
+}
