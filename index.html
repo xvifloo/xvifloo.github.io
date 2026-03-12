@@ -11,8 +11,7 @@
     <div class="cursor-outline"></div>
 
     <div class="shape-rect-top">
-        <div class="custom-rectangle">
-          <div class="custom-rectangle">
+       <div class="custom-rectangle" id="navBar">
     <div class="nav-logo-wrapper">
         <svg class="nav-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
             <g class="xvi-part">
@@ -62,12 +61,54 @@
 		c1.8,0,3.4-1.5,3.4-3.5c0-1.8-1.5-3.3-3.4-3.3c-1.9,0-3.4,1.5-3.4,3.4C14.8,29.2,16.3,30.8,18.2,30.7z M45.6,24.7
 		c-1.9,0-3.4,1.5-3.4,3.3c0,1.9,1.5,3.4,3.3,3.4c1.9,0.1,3.5-1.5,3.5-3.3C49,26.3,47.5,24.7,45.6,24.7z"/>
 </svg>
-<div class="hamburger">
+
+<div class="hamburger" id="hbBtn">
     <span></span>
     <span></span>
     <span></span>
 </div>
     </div>
+
+    <!-- NAV MENU -->
+    <div class="nm-list" id="nmList">
+      <a href="#" class="nm-item">
+        <span class="nm-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 21V12h6v9" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        <span class="nm-label">Home</span>
+        <span class="nm-arr"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      </a>
+      <a href="#" class="nm-item">
+        <span class="nm-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="13" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="13" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/></svg></span>
+        <span class="nm-label">Presets</span>
+        <span class="nm-arr"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      </a>
+      <a href="#" class="nm-item">
+        <span class="nm-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3-3a6 6 0 0 1-7.5 7.5l-6.4 6.4a2.1 2.1 0 0 1-3-3l6.4-6.4a6 6 0 0 1 7.5-7.5l-3 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        <span class="nm-label">Tools</span>
+        <span class="nm-arr"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      </a>
+      <a href="#" class="nm-item">
+        <span class="nm-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        <span class="nm-label">Setup Guide</span>
+        <span class="nm-arr"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      </a>
+      <a href="#" class="nm-item">
+        <span class="nm-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="17" r="0.8" fill="currentColor"/></svg></span>
+        <span class="nm-label">Support</span>
+        <span class="nm-arr"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      </a>
+      <a href="#" class="nm-item">
+        <span class="nm-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 3a4.5 4.5 0 0 1 0 9M12 3a4.5 4.5 0 0 0 0 9M3 12h18" stroke="currentColor" stroke-width="1.8"/></svg></span>
+        <span class="nm-label">Language</span>
+        <span class="nm-arr"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      </a>
+      <a href="#" class="nm-item nm-login">
+        <span class="nm-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 17l5-5-5-5M15 12H3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <span class="nm-label">Login</span>
+        <span class="nm-arr"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      </a>
+    </div>
+
+</div>
 </div>
 
 
@@ -839,6 +880,38 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
   document.querySelectorAll('.preset-card').forEach(function(c,i){
     c.style.transitionDelay = (i * 0.08) + 's';
     o.observe(c);
+  });
+})();
+</script>
+<script>
+(function(){
+  var nav  = document.getElementById('navBar');
+  var btn  = document.getElementById('hbBtn');
+  var list = document.getElementById('nmList');
+
+  function close(){
+    nav.classList.remove('nav-open');
+    btn.classList.remove('open');
+  }
+  function open(){
+    nav.classList.add('nav-open');
+    btn.classList.add('open');
+  }
+
+  /* hamburger click */
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    nav.classList.contains('nav-open') ? close() : open();
+  });
+
+  /* menu item click → close */
+  list.querySelectorAll('.nm-item').forEach(function(item){
+    item.addEventListener('click', close);
+  });
+
+  /* screen এর যেকোনো জায়গায় click → close */
+  document.addEventListener('click', function(e){
+    if(!nav.contains(e.target)) close();
   });
 })();
 </script>

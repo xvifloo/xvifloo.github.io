@@ -87,7 +87,7 @@ html.js-enabled {
     height: auto;
     color: #00ca9c;
     opacity: 0.5;
-    animation: loopRotate 10s linear infinite;
+    animation: loopRotate 20s linear infinite;
 }
 
 /* পাতা - বামে নিচে */
@@ -152,7 +152,19 @@ html.js-enabled {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: visible !important;
+}
+ #navBar {
+    overflow: hidden;
+    max-height: 52px;
+    border-radius: 50px;
+    transition: max-height 0.5s ease,
+                border-radius 0.4s ease;
+    will-change: max-height;
+}
+
+#navBar.nav-open {
+    max-height: 600px;
+    border-radius: 50px 50px 22px 22px;
 }
 
 /* রেকট্যাঙ্গেলের কোণায় ঘূর্ণায়মান আইকন */
@@ -391,8 +403,8 @@ font-size: 12px;
     flex-direction: column;
     width: 100%;
     height: auto;
-    min-height: 220px;
-    background: #000000 ;   /*263632*/
+    min-height: 250px;
+    background: #213834 ;   /*263632*/
     margin: 0;
     padding: 20px 30px 15px 30px;
     box-sizing: border-box;
@@ -592,9 +604,12 @@ font-size: 12px;
 }
 .hamburger {
     width: 20px;  
-    position: absolute;              /* আইকনের চওড়া */
+    position: absolute;   
+     right: 16px;           /* আইকনের চওড়া */
     height: 15px;  
-    left: 90%;             /* আইকনের উচ্চতা */
+    left: auto;   
+    top: 50%;
+    transform: translateY(-50%);          /* আইকনের উচ্চতা */
     display: flex;              /* ফ্লেক্সবক্স দিয়ে লাইনগুলো সাজাবো */
     flex-direction: column;     /* ওপর-নিচ সাজানোর জন্য */
     justify-content: space-between; /* লাইনগুলোর মাঝে সমান ফাঁকা রাখতে */
@@ -602,10 +617,13 @@ font-size: 12px;
 }
 
 .hamburger span {
-    width: 100%;                /* লাইনের লম্বা */
-    height: 3px;                /* লাইনের পুরুত্ব */
-    background-color: #359b8a;     /* লাইনের রঙ (আপনার প্রয়োজন অনুযায়ী বদলাতে পারেন) */
-    border-radius: 2px;         /* কোণা গোলাকার করার জন্য */
+    width: 100%;
+    height: 3px;
+    background-color: #359b8a;
+    border-radius: 2px;
+    display: block;          /* ← এটা আছে? না থাকলে যোগ করো */
+    transform-origin: center;
+
 }
 /* কাস্টম ফন্ট লিংক করা */
 /* … আপনার @font-face, রুট ভ্যারিয়েবল ইত্যাদি … */
@@ -762,6 +780,8 @@ font-size: 12px;
     text-align: center;
     line-height: 1.4;
 }
+
+
 .contact-section {
     position: relative;
     z-index: 1;
@@ -953,7 +973,7 @@ font-size: 12px;
     z-index: 1 !important;
     max-width: 580px;
     margin: 0 auto;
-    padding: 60px 20px 40px;
+    padding: 60px 0px 40px;
 }
 
 /* glass color — background এর সাথে মিলিয়ে, blue নেই */
@@ -1015,7 +1035,7 @@ font-size: 12px;
 .presets-section {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 80px 24px 60px;
+  padding: -20px 0px 60px;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity .7s ease, transform .7s ease;
@@ -1102,7 +1122,7 @@ font-size: 12px;
     transparent   360deg
   );
   opacity: 0;
-  z-index: 0;
+  z-index: 1;
   transition: opacity .3s ease;
   filter: blur(1.5px);
 }
@@ -1125,7 +1145,7 @@ font-size: 12px;
 /* ── CARD INNER FACE ─────────────────────────────────────── */
 .pc-inner {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   border-radius: 18px;
   overflow: hidden;
   background: var(--ps-card-glass);
@@ -1262,3 +1282,130 @@ font-size: 12px;
   font-weight: 600;
   color: var(--ps-btn-text);
 }
+/* ════════════════════════════════════
+   NAVBAR EXPAND MENU
+════════════════════════════════════ */
+
+/* navbar বন্ধ → খোলা */
+#navBar {
+  transition: height .45s cubic-bezier(.4,0,.2,1),
+              border-radius .45s ease !important;
+  overflow: hidden !important;
+  align-items: flex-start !important;
+  flex-direction: column !important;
+  height: 46px !important;
+}
+#navBar.nav-open {
+  height: auto !important;
+  border-radius: 22px !important;
+}
+
+/* ── NAVBAR SHUTTER EXPAND ── */
+
+/* outer: overflow visible রাখো (petal এর জন্য) */
+.shape-rect-top .custom-rectangle {
+  overflow: visible !important;
+}
+
+/* inner navBar: এটাই শাটারের মতো নিচে বড় হবে */
+#navBar {
+  overflow: hidden;
+  max-height: 46px;
+  flex-direction: column;
+  align-items: flex-start;   /* সব কিছু বামে */
+  justify-content: flex-start;
+  border-radius: 50px;
+  transition: max-height 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+              border-radius 0.28s ease;
+  width: 80vw;
+  max-width: 6000px;
+}
+
+#navBar.nav-open {
+  max-height: 520px;
+  border-radius: 22px;
+}
+
+/* logo row: সবসময় 46px উচ্চতায় থাকবে */
+.nav-logo-wrapper {
+  min-height: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* menu list: বাম দিকে */
+.nm-list {
+    max-height: 0;
+    overflow: visible;      /* ← hidden না, visible করো */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease 0.1s;
+}
+
+#navBar.nav-open .nm-list {
+    max-height: none;       /* ← fixed value না, none দাও */
+    opacity: 1;
+    pointer-events: all;
+    padding: 4px 14px 16px;
+}
+
+/* menu items: বাম থেকে slide in */
+.nm-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #0a3d33;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  opacity: 0;
+  transform: translateX(-16px);
+  transition: background 0.18s, border-color 0.18s,
+              transform 0.22s ease, opacity 0.22s ease;
+}
+
+#navBar.nav-open .nm-item { transform: translateX(0); opacity: 1; }
+#navBar.nav-open .nm-item:nth-child(1) { transition-delay: 0.08s; }
+#navBar.nav-open .nm-item:nth-child(2) { transition-delay: 0.12s; }
+#navBar.nav-open .nm-item:nth-child(3) { transition-delay: 0.16s; }
+#navBar.nav-open .nm-item:nth-child(4) { transition-delay: 0.20s; }
+#navBar.nav-open .nm-item:nth-child(5) { transition-delay: 0.24s; }
+#navBar.nav-open .nm-item:nth-child(6) { transition-delay: 0.28s; }
+#navBar.nav-open .nm-item:nth-child(7) { transition-delay: 0.32s; }
+
+.nm-item:hover {
+  background: rgba(70, 255, 213, 0.13);
+  border-color: rgba(70, 255, 213, 0.32);
+}
+
+.nm-icon {
+  width: 32px; height: 32px;
+  border-radius: 10px;
+  background: rgba(185, 248, 232, 0.38);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: #0b9b84;
+}
+.nm-icon svg { width: 17px; height: 17px; }
+.nm-label { flex: 1; }
+.nm-arr { color: #0b9b84; opacity: 0.55; }
+.nm-arr svg { width: 15px; height: 15px; }
+.nm-login {
+  border-top: 1px solid rgba(11,155,132,0.14);
+  margin-top: 4px;
+  padding-top: 10px;
+}
+
+/* hamburger X */
+#hbBtn span {
+  transition: transform 0.28s ease, opacity 0.2s ease;
+}
+#hbBtn.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+#hbBtn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+#hbBtn.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
